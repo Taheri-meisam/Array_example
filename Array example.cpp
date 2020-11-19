@@ -5,14 +5,14 @@
 class ArrayClass
 {
 public:
-    static const int row = 2, col = 5;
-    int status1 = 0, status2 = 0, status3 = 0, status4 = 0, status5 = 0;
+    static constexpr int row = 2, col = 5;
+    int status[5]{ 0 };
     int dice1 = rand() % 6 + 1, dice2 = rand() % 6 + 1, dice3 = rand() % 6 + 1, dice4 = rand() % 6 + 1, dice5 = rand() % 6 + 1;
 
     int diceBoard[row][col]
     {
         {dice1, dice2, dice3, dice4, dice5},
-        {status1, status2, status3, status4, status5}
+        {this->status[0], this->status[1], this->status[2],this->status[3], this->status[4]}
     };
 
 public:
@@ -43,19 +43,19 @@ public:
             switch (_getch())
             {
             case '1':
-                 = 1;
+                status[0] = 0;
                 break;
             case '2':
-                status2 = 1;
+                status[1] = 1;
                 break;
             case '3':
-                status3 = 1;
+                status[2] = 1;
                 break;
             case '4':
-                status4 = 1;
+                status[3] = 1;
                 break;
             case '5':
-                status5 = 1;
+                status[4] = 1;
             }
             system("cls");
             printBoard();
