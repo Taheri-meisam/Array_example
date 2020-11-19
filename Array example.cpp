@@ -38,7 +38,7 @@ public:
     void holdChoice()
     {
         std::cout << "Please type the number of the dice you would like to reroll.\n";
-        for (int i = 1; i < col; i++)
+        for (int i = 0; i < col; i++)
         {
             switch (i+1)
             {
